@@ -1,10 +1,10 @@
-# ClackJack vite
+# BlackJack vite
 
 Pasos para ejecutar el proyecto:
 
 1. Clonar repositorio
 2. Ejecutar ```npm install``` para reconstruir los modulos de node
-3. Correr el devServer ```localhost:5173```
+3. Correr el devServer ```http://localhost:5173```
 
 ## Produccion 
 
