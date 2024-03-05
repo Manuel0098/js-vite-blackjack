@@ -6,6 +6,7 @@ html, body {
 
 
 .titulo {
+  aspect-ratio: 15 / 1;
   text-align: center;
   background: black;
   padding: 20px;
@@ -24,13 +25,6 @@ html, body {
   text-shadow: 0px 0px 4px;
   
 }
-
-/*.titulo:hover p {
-  transition: color ;
-  transition-duration: 1s;
-  transition-delay: 0s ;
-  color: rgb(247, 1, 1);
-}*/
 
 .botones {
   transition: text-shadow,;
@@ -97,15 +91,8 @@ html, body {
 
 @media(max-width: 413px){
   .titulo {
+    aspect-ratio: 6/1;
       padding: 5px;
-  }
-
-  .players-title{
-      font-size: 30px;
-  }
-
-  .divCartas {
-      margin-left: -20px;
   }
 
   #winning-message{
@@ -117,6 +104,57 @@ html, body {
   #winning-message p {
       
       text-align: center;
+  }
+
+  .players-title{
+    font-size: 30px;
+}
+
+.divCartas {
+    margin-left: -20px;
+}
+
+.carta {
+  width: 135px;
+  margin-left: -80px;
+}
+
+  #computadora-cartas, #jugador-cartas {
+    max-height: 200px;
+  }
+
+}
+
+@media(max-width: 320px){
+  .titulo {
+    aspect-ratio: 7/1;
+    min-height: 1%;
+  }
+
+  #winning-message{
+    aspect-ratio: 7/1;
+         
+  }
+
+  #winning-message p {
+    font-size: 18px; 
+  }
+  .players-title {
+    font-size: 20px;
+    margin-top: -10px;
+  }
+
+  .divCartas {
+    margin-left: -50px;
+  }
+
+  .carta {
+    width: 80px;
+    margin-left: -40px;
+  }
+
+  #computadora-cartas, #jugador-cartas {
+    max-height: 130px;
   }
 
 }
