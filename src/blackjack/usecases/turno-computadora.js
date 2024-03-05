@@ -8,6 +8,16 @@ import { pedirCarta, valorCarta, crearCartaHTML } from "./";
  * @param {Array<String>} deck 
  * @returns {Void}
  */
+
+// Referencia
+const divCartasJugadores = document.querySelectorAll('.divCartas'),
+      divWinningMessage  = document.querySelector('#winning-message'),
+      winningMessage = {
+                        jugador: 'Jugador gana',
+                        computadora: 'La computadora gana',
+                        nadie: 'Nadie gana...'
+                    };
+
 export const turnoComputadora = ( puntosMinimos, puntosHTML, divCartasComputadora, deck = [] ) => {
 
     if( !puntosMinimos ) throw new Error('Los puntosMinimos son necesarios');
@@ -30,15 +40,42 @@ export const turnoComputadora = ( puntosMinimos, puntosHTML, divCartasComputador
 
     } while(  (puntosComputadora < puntosMinimos)  && (puntosMinimos <= 21 ) );
 
+    const divCartasOne = divCartasJugadores[0].querySelectorAll('img'),
+          divCartasTwo = divCartasJugadores[1].querySelectorAll('img');
+
     setTimeout(() => {
-        if( puntosComputadora === puntosMinimos ) {
-            alert('Nadie gana :(');
-        } else if ( puntosMinimos > 21 ) {
-            alert('Computadora gana')
-        } else if( puntosComputadora > 21 ) {
-            alert('Jugador Gana');
-        } else {
-            alert('Computadora Gana')
-        }
-    }, 100 );
+        
+        divWinningMessage.style.opacity = 1;
+
+       if( puntosComputadora === puntosMinimos){
+            if(divCartasOne.length < divCartasTwo.length){
+                
+                divWinningMessage.innerHTML = `<p>${winningMessage.jugador}</p>`; 
+
+            }else if(divCartasOne.length > divCartasTwo.length){
+
+                divWinningMessage.innerHTML = `<p>${winningMessage.computadora}</p>`; 
+               
+            }else {
+
+                divWinningMessage.innerHTML = `<p>${winningMessage.nadie}</p>`; 
+               
+            };
+            
+        }else if(puntosMinimos > 21){
+
+            divWinningMessage.innerHTML = `<p>${winningMessage.computadora}</p>`; 
+           
+        }else if(puntosComputadora > 21){
+
+            divWinningMessage.innerHTML = `<p>${winningMessage.jugador}</p>`; 
+           
+        }else {
+
+            divWinningMessage.innerHTML = `<p>${winningMessage.computadora}</p>`;
+            
+        };
+        
+    }, 300 );
 }
+

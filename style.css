@@ -7,10 +7,77 @@ html, body {
 
 .titulo {
   text-align: center;
-  background-color: black;
-  color: white;
+  background: black;
   padding: 20px;
   font-size: 25px;
+  transition: background-color, font-size, padding;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+ 
+}
+
+.titulo p {
+  transition: color;
+  transition-duration: 2s;
+  transition-delay: 1.5s;
+  color: white;
+  text-shadow: 0px 0px 4px;
+  
+}
+
+/*.titulo:hover p {
+  transition: color ;
+  transition-duration: 1s;
+  transition-delay: 0s ;
+  color: rgb(247, 1, 1);
+}*/
+
+.botones {
+  transition: text-shadow,;
+  transition-duration: 2s;
+  transition-delay: 2s;
+  transition-timing-function: linear;
+  text-shadow: 0px 0px 3px;
+  box-shadow: 0px 0px 6px black;
+}
+
+#winning-message {
+  width: auto;
+  aspect-ratio: 25 / 1;
+  margin-top: 2px;
+  margin-left: 30px;
+}
+
+#winning-message p {
+  color: rgb(89, 255, 0);
+  text-shadow: 4px 3px 6px black, 5px 4px 6px black, 6px 5px 6px black;
+  font-size: 25px;
+ /* transition-duration: 2s;*/
+  animation-name: winning-message;
+  animation-duration: 3s;
+  animation-direction: normal;
+  animation-iteration-count: initial;
+}
+
+@keyframes winning-message{
+  0% {
+    margin-left: -300px;
+    color: rgb(11, 110, 3);
+  }
+
+  50% {
+
+    color: rgb(17, 178, 5);
+  }
+
+  100% {
+    margin-left: 0px;
+    color: rgb(89, 255, 0);
+  }
+}
+
+.players-title {
+  text-shadow: 5px 4px 6px black, 6px 5px 6px black, 7px 6px 6px black;
 }
 
 .carta {
@@ -18,8 +85,38 @@ html, body {
   width: 150px;
   left: 100px;
   margin-left: -75px;
+  border-radius: left 1xp solid; 
+  /*box-shadow: -1px 1px 17px black;*/
 }
 
 #computadora-cartas, #jugador-cartas {
   height: 240px;
+}
+
+/* Response*/
+
+@media(max-width: 413px){
+  .titulo {
+      padding: 5px;
+  }
+
+  .players-title{
+      font-size: 30px;
+  }
+
+  .divCartas {
+      margin-left: -20px;
+  }
+
+  #winning-message{
+      aspect-ratio: 8;
+      margin-bottom: 0px;
+          
+  }
+
+  #winning-message p {
+      
+      text-align: center;
+  }
+
 }

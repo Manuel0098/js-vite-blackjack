@@ -28,6 +28,7 @@ const btnNuevo   = document.querySelector('#btnNuevo');
 
 const divCartasJugador     = document.querySelector('#jugador-cartas');
 const divCartasComputadora = document.querySelector('#computadora-cartas');
+const divWinningMessage  = document.querySelector('#winning-message')
 
 const puntosHTML = document.querySelectorAll('small');
 
@@ -69,6 +70,8 @@ btnDetener.addEventListener('click', () => {
 
 btnNuevo.addEventListener('click', () => {
 
+    divWinningMessage.style.opacity = 0;
+
     console.clear();
     deck = [];
     deck = crearDeck( tipos, especiales );
@@ -84,5 +87,7 @@ btnNuevo.addEventListener('click', () => {
 
     btnPedir.disabled   = false;
     btnDetener.disabled = false;
+
+    
 
 });
