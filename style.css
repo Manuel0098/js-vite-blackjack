@@ -11,14 +11,14 @@ html, body {
   background: black;
   padding: 20px;
   font-size: 25px;
-  transition: background-color, font-size, padding !important;
+ /* transition: background-color, font-size, padding !important;*/
   transition-duration: 1.5s;
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
  
 }
 
 .titulo p {
-  transition: color !important;
+  /*transition: color !important;*/
   transition-duration: 2s;
   transition-delay: 1.5s;
   color: white;
